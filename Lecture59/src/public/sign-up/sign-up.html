@@ -1,0 +1,58 @@
+<div class="container container-md" class="panel-body" ng-controller="regController as reg">
+			<form role="form" name="reg.registerForm" novalidate="" ng-submit="reg.register()" class="form-validate mb-lg">
+				<div class="row">
+					<div class="col-md-2">
+							<label class="text-muted">First Name</label>
+							<input type="text" name="first_name" ng-pattern="/^(\D)+$/" placeholder="Enter First name"  ng-model="reg.firstname" required="" class="form-control" />
+							<span class="icon-user form-control-feedback text-muted"></span>
+							<span ng-show="reg.registerForm.first_name.$dirty &amp;&amp; reg.registerForm.first_name.$error.required" class="text-danger">This field is required</span>
+							<span ng-show=" reg.registerForm.first_name.$error.pattern" class="text-danger">Text only!</span>
+						</div>
+          <div class="col-md-2">
+              <label class="text-muted">Last Name</label>
+              <input type="text" name="last_name" ng-pattern="/^(\D)+$/" placeholder="Enter Last name"  ng-model="reg.lastname" required="" class="form-control" />
+              <span class="icon-user form-control-feedback text-muted"></span>
+              <span ng-show="reg.registerForm.last_name.$dirty &amp;&amp; reg.registerForm.last_name.$error.required" class="text-danger">This field is required</span>
+              <span ng-show=" reg.registerForm.last_name.$error.pattern" class="text-danger">Text only!</span>
+          </div>
+          <div class="col-md-2">
+      						<div>
+      							<label class="text-muted">Email address</label>
+      							<input type="email" name="account_email" placeholder="Enter email"  ng-model="reg.mail" required="" class="form-control" />
+      							<span class="fa fa-envelope form-control-feedback text-muted"></span>
+      							<span ng-show="reg.registerForm.account_email.$dirty &amp;&amp; reg.registerForm.account_email.$error.required" class="text-danger">This field is required</span>
+      							<span ng-show="reg.registerForm.account_email.$dirty &amp;&amp; reg.registerForm.account_email.$error.email" class="text-danger">This field must be a valid email
+      								address</span>
+      						</div>
+      					</div>
+					<div class="col-md-2">
+							<label class="text-muted">Mobile Number</label>
+							<input type="tel"  limit-to="11" ng-pattern="/^(\d)+$/" ng-maxlength="11" name="mobile" placeholder="Enter mobile" ng-model="reg.Phone" required="" class="form-control" />
+							<span class="icon-phone form-control-feedback text-muted"></span>
+							<span ng-show="reg.registerForm.mobile.$dirty &amp;&amp; reg.registerForm.mobile.$error.required" class="text-danger">This field is required</span>
+							<span class="help-block" ng-show="reg.registerForm.mobile.$error.pattern " style="color:red;"class="text-danger">
+										Numbers only! </span>
+											<span class="help-block" ng-show=" reg.registerForm.mobile.$error.limit-to" style="color:red;"class="text-danger">
+										Too long please match the format! </span>
+						</div>
+            <div class="col-md-2">
+                <label class="text-muted">menu number</label>
+                <input type="text" name="menu_number"  placeholder="Enter Last name"  ng-model="reg.menu_number" required="" class="form-control" />
+
+                <span ng-show="reg.registerForm.menu_number.$dirty &amp;&amp; reg.registerForm.menu_number.$error.required" class="text-danger">This field is required</span>
+            </div>
+
+          <button type="submit" class="btn btn-block btn-success mt-lg" ng-disabled="reg.registerForm.$invalid" ng-click="reg.submit()" >Sign Up</button>
+
+        <h4 class="message"ng-show="reg.here">Your data hase been successfully saved!</h4>
+        <h4 class="message"ng-show="reg.nothere">No such menu number exists</h4>
+          <!-- <h3 class="item">Favourite Choice:</h3>
+        <div ng-show="reg.here" class="item">
+        <h4>name: {{reg.item.name}}</h4>
+        <h4>short_name: {{reg.item.short_name}}</h4>
+        <h4>price: {{reg.item.price_small | currency}}</h4>
+        <h4>description: {{reg.item.description}}</h4>
+      </div> -->
+      </div>
+              </form>
+    </div>

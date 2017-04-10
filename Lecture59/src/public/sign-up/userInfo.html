@@ -1,0 +1,48 @@
+
+<div ng-controller="userInfoController as reguser">
+  <h4 ng-hide="reguser.ok" class="message">Sign Up first!</h4>
+  <div ng-show="reguser.ok" class="item">
+    <table >
+      <tr>
+        <td>First Name:</td>
+        <td  style="color:white;">{{reguser.saveduser.firstName}}.</td>
+      </tr>
+      <tr>
+        <td>Last Nmae:</td>
+        <td  style="color:white;">{{reguser.saveduser.lastName}}.</td>
+      </tr>
+      <tr>
+        <td> Mobile:</td>
+        <td  style="color:white;"> {{reguser.saveduser.mobile}}.</td>
+      </tr>
+      <tr>
+          <td>  Mail:</td>
+        <td  style="color:white;">  {{reguser.saveduser.mail}}.</td>
+      </tr>
+      <tr>
+      <td> Favourite Choice:</td>
+      </tr>
+      <tr>
+        <td>Item Number:</td>
+        <td style="color:white;">{{reguser.saveduser.menuNumber}}.</td>
+      </tr>
+      <tr>
+        <td>Item Name:</td>
+        <td style="color:white;">  {{reguser.showItem.name}}.</td>
+      </tr>
+      <tr>
+        <td>Item Discription:</td>
+       <td  style="color:white;">  {{reguser.showItem.description}}.</td>
+      </tr>
+      <tr>
+        <td style="padding-left:500px;"> <img  width="250" height="150" ng-src="https://alaamshaban.herokuapp.com/images/{{reguser.saveduser.menuNumber}}.jpg" alt="{{reguser.saveduser.name}}" ></td>
+</tr>
+    </table>
+<!--
+ First Name:  {{reguser.saveduser.firstName}}. <br>
+ Last Name:  {{reguser.saveduser.lastName}}.  <br>
+ Phone:      {{reguser.saveduser.mobile}}. <br>
+ Mail:       {{reguser.saveduser.mail}}. <br>
+ Favourute Choice:  {{reguser.saveduser.menuNumber}}. <br> -->
+</div>
+</div>
